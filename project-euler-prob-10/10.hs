@@ -1,4 +1,6 @@
-primes :: Integer -> [Integer]
+import Data.Int
+
+primes :: Int64 -> [Int64]
 
 primes how_much = sieve [2..how_much] where
          sieve (p:x) = 
