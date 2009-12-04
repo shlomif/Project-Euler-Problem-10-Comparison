@@ -1,12 +1,14 @@
 TARGETS = haskell_mine haskell_zeroth c_mine c_mine_micro_opt c_mine_half
 
+HS_OPTS = -O2 -fvia-c -optc-O2
+
 all: $(TARGETS)
 
 haskell_mine: 10.hs
-	ghc -o $@ $<
+	ghc $(HS_OPTS) -o $@ $<
 
 haskell_zeroth: 10-zerothorder.hs
-	ghc -o $@ $<
+	ghc $(HS_OPTS) -o $@ $<
 
 c_mine: 10.c
 	gcc -O2 -o $@ -Wall $<
