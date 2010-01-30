@@ -1,0 +1,18 @@
+# This was ran on:
+# * A Pentium 4 2.4 GHz machine with 2.5 GB of RAM
+# * Running Mandriva Linux Cooker (as of 28-November-2009)
+# * On top of XFCE from Cooker and very few things running in the background.
+# * The c_opti versions flags were: 
+#   - -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O3 
+Benchmark: timing 500 iterations of c_mine, c_mine_half, c_mine_micro_opt, c_opti_mine, c_opti_mine_half, c_opti_mine_micro_opt...
+    c_mine: 13 wallclock secs ( 0.02 usr  0.14 sys + 10.68 cusr  2.04 csys = 12.88 CPU) @ 38.82/s (n=500)
+c_mine_half:  8 wallclock secs ( 0.02 usr  0.13 sys +  5.68 cusr  1.95 csys =  7.78 CPU) @ 64.27/s (n=500)
+c_mine_micro_opt: 13 wallclock secs ( 0.02 usr  0.13 sys + 10.08 cusr  2.14 csys = 12.37 CPU) @ 40.42/s (n=500)
+c_opti_mine: 22 wallclock secs ( 0.02 usr  0.13 sys + 19.23 cusr  2.07 csys = 21.45 CPU) @ 23.31/s (n=500)
+c_opti_mine_half: 12 wallclock secs ( 0.02 usr  0.13 sys +  9.65 cusr  2.03 csys = 11.83 CPU) @ 42.27/s (n=500)
+c_opti_mine_micro_opt: 19 wallclock secs ( 0.02 usr  0.13 sys + 16.17 cusr  2.08 csys = 18.40 CPU) @ 27.17/s (n=500)
+Benchmark: timing 20 iterations of haskell_mine, haskell_zeroth, perl-10, perl-10_half...
+haskell_mine: 61 wallclock secs ( 0.00 usr  0.01 sys + 59.92 cusr  0.34 csys = 60.27 CPU) @  0.33/s (n=20)
+haskell_zeroth: 291 wallclock secs ( 0.00 usr  0.00 sys + 290.06 cusr  0.96 csys = 291.02 CPU) @  0.07/s (n=20)
+   perl-10: 88 wallclock secs ( 0.00 usr  0.00 sys + 87.09 cusr  0.24 csys = 87.33 CPU) @  0.23/s (n=20)
+perl-10_half: 64 wallclock secs ( 0.00 usr  0.01 sys + 64.36 cusr  0.25 csys = 64.62 CPU) @  0.31/s (n=20)
