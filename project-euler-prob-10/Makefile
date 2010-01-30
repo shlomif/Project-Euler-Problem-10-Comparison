@@ -1,7 +1,7 @@
 TARGETS = haskell_mine haskell_zeroth c_mine c_mine_micro_opt c_mine_half \
 		  c_opti_mine c_opti_mine_micro_opt c_opti_mine_half
 
-C_OPTIMIZED_OPTS = -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O3
+C_OPTIMIZED_OPTS = -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O2
 
 HS_OPTS = -O2 -fvia-c -optc-O2
 
