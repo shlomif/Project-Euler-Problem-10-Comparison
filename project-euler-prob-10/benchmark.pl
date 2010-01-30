@@ -21,14 +21,14 @@ sub get_perl_prog_kv
     return ("perl-$prog" => sub { system($cmd); });
 }
 
+my @c_s = qw(c_mine c_mine_micro_opt c_mine_half);
+
 timethese(
     500,
     {
         (
             map { get_c_prog_kv($_) } 
-            (qw(
-                c_mine c_mine_micro_opt c_mine_half 
-            ))
+            (@c_s, (map { my $s = $_; $s =~ s{\Ac_}{c_opti_}; $s } @c_s))
         ),
     }
 );

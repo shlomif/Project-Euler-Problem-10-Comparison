@@ -1,4 +1,7 @@
-TARGETS = haskell_mine haskell_zeroth c_mine c_mine_micro_opt c_mine_half
+TARGETS = haskell_mine haskell_zeroth c_mine c_mine_micro_opt c_mine_half \
+		  c_opti_mine c_opti_mine_micro_opt c_opti_mine_half
+
+C_OPTIMIZED_OPTS = -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O3
 
 HS_OPTS = -O2 -fvia-c -optc-O2
 
@@ -18,6 +21,15 @@ c_mine_micro_opt: 10_micro_opt.c
 
 c_mine_half: 10_half.c
 	gcc -O2 -o $@ -Wall $<
+
+c_opti_mine: 10.c
+	gcc $(C_OPTIMIZED_OPTS) -o $@ -Wall $<
+
+c_opti_mine_micro_opt: 10_micro_opt.c
+	gcc $(C_OPTIMIZED_OPTS) -o $@ -Wall $<
+
+c_opti_mine_half: 10_half.c
+	gcc $(C_OPTIMIZED_OPTS) -o $@ -Wall $<
 
 mystrip:
 	strip $(TARGETS)
