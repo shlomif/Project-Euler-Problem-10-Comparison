@@ -5,13 +5,7 @@ use warnings;
 
 use Benchmark qw(:all) ;
 
-sub get_c_prog_kv
-{
-    my $prog = shift;
-    my $cmd = "./$prog > /dev/null";
-
-    return ($prog => sub { system($cmd); });
-}
+use File::Copy qw(copy);
 
 sub get_perl_prog_kv
 {
@@ -23,26 +17,33 @@ sub get_perl_prog_kv
 
 my @c_s = qw(c_mine c_mine_micro_opt c_mine_half);
 
-timethese(
-    500,
-    {
-        (
-            map { get_c_prog_kv($_) } 
-            (@c_s, (map { my $s = $_; $s =~ s{\Ac_}{c_opti_}; $s } @c_s))
-        ),
-    }
-);
+sub run_c
+{
+    system("./c > /dev/null");
+}
 
-timethese(
-    20,
-    {
-        (
-            map { get_c_prog_kv($_) } 
-            qw(haskell_mine haskell_zeroth)
-        ),
-        (
-            map { get_perl_prog_kv($_) }
-            (qw(10 10_half))
-        ),
-    },
-);
+foreach my $c_prog (
+    @c_s, 
+    (map { my $s = $_; $s =~ s{\Ac_}{c_opti_}; $s } @c_s)
+)
+{
+    # C is for Cookie! In our case it's a short name for the program to
+    # get rid of timing problems
+    copy($c_prog, "c");
+    chmod(0755, "c");
+    timethese (500, { $c_prog => \&run_c },);
+    unlink("c");
+}
+
+foreach my $p_prog (
+    qw(haskell_mine haskell_zeroth),
+    qw(10.pl 10_half.pl),
+)
+{
+    # C is for Cookie! In our case it's a short name for the program to
+    # get rid of timing problems
+    copy($p_prog, "c");
+    chmod(0755, "c");
+    timethese (20, { $p_prog => \&run_c },);
+    unlink("c");
+}
