@@ -1,0 +1,11 @@
+=encoding utf8
+
+=head1 Various programs to solve Project Euler #10
+
+See L<http://shlomif-tech.livejournal.com/44006.html> - programs by
+Shlomi Fish ( L<http://www.shlomifish.org> ) and zeroth to solve Project
+Euler #10 in various languages such as C, Haskell and Perl 5.
+
+Most of the code here is MIT licensed.
+
+=cut
