@@ -3,15 +3,15 @@
  *
  *       Filename:  10.c
  *
- *    Description:  
+ *    Description:
  *
  *        Version:  1.0
  *        Created:  28/11/09 14:08:11
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *        Company:  
+ *         Author:  YOUR NAME (),
+ *        Company:
  *
  * =====================================================================================
  */
@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
 
     loop_to=(((int)(sqrt(limit)))>>1);
     half_limit = (limit-1)>>1;
-    
+
     for (half=1 ; half <= loop_to ; half++)
     {
         if (! ( bitmask[half>>3]&(1 << (half&(8-1))) ) )

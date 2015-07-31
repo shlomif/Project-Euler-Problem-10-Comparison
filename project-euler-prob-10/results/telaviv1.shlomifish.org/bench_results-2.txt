@@ -2,8 +2,8 @@
 # * A Pentium 4 2.4 GHz machine with 2.5 GB of RAM
 # * Running Mandriva Linux Cooker (as of 28-November-2009)
 # * On top of XFCE from Cooker and very few things running in the background.
-# * The c_opti versions flags were: 
-#   - -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O3 
+# * The c_opti versions flags were:
+#   - -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O3
 Benchmark: timing 500 iterations of c_mine, c_mine_half, c_mine_micro_opt, c_opti_mine, c_opti_mine_half, c_opti_mine_micro_opt...
     c_mine: 13 wallclock secs ( 0.02 usr  0.14 sys + 10.68 cusr  2.04 csys = 12.88 CPU) @ 38.82/s (n=500)
 c_mine_half:  8 wallclock secs ( 0.02 usr  0.13 sys +  5.68 cusr  1.95 csys =  7.78 CPU) @ 64.27/s (n=500)

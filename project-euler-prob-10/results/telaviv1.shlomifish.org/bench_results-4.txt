@@ -2,8 +2,8 @@
 # * A Pentium 4 2.4 GHz machine with 2.5 GB of RAM
 # * Running Mandriva Linux Cooker (as of 28-November-2009)
 # * On top of XFCE from Cooker and very few things running in the background.
-# * The c_opti versions flags were: 
-#   - -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O2 
+# * The c_opti versions flags were:
+#   - -march=pentium4 -fomit-frame-pointer -fPIC -fvisibility=hidden -O2
 Benchmark: timing 500 iterations of c_mine...
     c_mine: 13 wallclock secs ( 0.02 usr  0.15 sys + 10.71 cusr  2.13 csys = 13.01 CPU) @ 38.43/s (n=500)
 Benchmark: timing 500 iterations of c_mine_micro_opt...

@@ -23,7 +23,7 @@ sub run_c
 }
 
 foreach my $c_prog (
-    @c_s, 
+    @c_s,
     (map { my $s = $_; $s =~ s{\Ac_}{c_opti_}; $s } @c_s)
 )
 {

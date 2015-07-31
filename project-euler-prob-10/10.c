@@ -14,7 +14,7 @@ int main(int argc, char * argv[])
 
     memset(bitmask, '\0', sizeof(bitmask));
     mark_limit = (int)sqrt(limit);
-    
+
     for (p=2 ; p <= mark_limit ; p++)
     {
         if (! ( bitmask[p>>3]&(1 << (p&(8-1))) ) )

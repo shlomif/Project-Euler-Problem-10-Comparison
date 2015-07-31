@@ -3,15 +3,15 @@
  *
  *       Filename:  10.c
  *
- *    Description:  
+ *    Description:
  *
  *        Version:  1.0
  *        Created:  28/11/09 14:08:11
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *        Company:  
+ *         Author:  YOUR NAME (),
+ *        Company:
  *
  * =====================================================================================
  */
@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
 
     memset(bitmask, '\0', sizeof(bitmask));
     mark_limit = (int)sqrt(limit);
-    
+
     for (p=2 ; p <= mark_limit ; p++)
     {
         if (! ( bitmask[p>>3]&(1 << (p&(8-1))) ) )
